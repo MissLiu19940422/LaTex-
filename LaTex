@@ -1,0 +1,81 @@
+中文的使用：采用\usepackage{xeCJK},并修改编译器XeLaTex
+换行符和换页符(断尾)：
+1.两个空行；2.\par ;3.\\   4.\newline  5. \hfill\break
+换页：\newpage
+段落对齐
+1.居中对齐:\begin{center}  ……  \end{center}
+2.左对齐:\begin{flushleft}  ……  \end{flushleft}
+3.右对齐:\begin{flushright}  ……  \end{flushright}
+字体设置(默认罗马字体)
+加粗：\textbf{} 
+下划线：\underline{}
+斜体：\textit{}
+倾斜加粗：\textbf{textit{}}
+图片的插入：
+使用的包：\usepackage{graphicx}以及\usepackage[export]{adjustbox}
+指定图片所保存的路径：\graphicpath{{./image/}},.相对路径
+在需要插入的位置：\includegraphics[scale（图片放缩比例），angle（图片逆时针旋转角度），weight（宽），height（搞）   right，left，center]{图片名}
+图片对齐方法（默认左对齐）：
+居中：
+\begin{center} 
+ \usepackage{graphicx}
+  \end{center}
+右对齐：
+\begin{flushright} 
+\usepackage{graphicx}
+ \end{flushright}
+若想插入连续的图片，即浮动的图片：
+\begin{figure}[h]
+\usepackage{graphicx}
+\begin{figure}
+
+文字包围图片：
+导入包：\usepackage{wrapfig}
+
+\begin{wrapfigure}{r}{0.25\textweight}
+\usepackage{graphicx}
+\end{wrapfigure}
+r/l:表示右对齐，左对齐
+0.25：外围的宽度
+\textwidth:四分之一长
+图片加标题以及图片的引用：
+标题在图片上方：
+\begin{figure}[h]
+\caption{}   #图片标题
+\centering  #图片居中
+\usepackage{graphicx}
+\end{figure}
+标题在图片下方：
+\begin{figure}[h]
+\centering  #图片居中
+\usepackage{graphicx}
+\caption{}   #图片标题
+\end{figure}
+一个标题对应两张图片：
+导入包：\usepackage{subcaption}
+图片位置：
+\begin{subfigure}
+两张图片
+\end{subfigure}
+图片的引用：\ref{fig:图片名}   \pageref{fig:图片名}：图片所在的页码
+表格的插入：
+#无边框居中
+\begin{center}
+\begin{tabular}{c c c}
+cell1 &  cell2 & cell3 \\
+cell4 &  cell5 & cell6 \\
+cell7 &  cell8 & cell9 
+\end{tabular}
+\end{center}
+#有边框
+\begin{center}
+\begin{tabular}{ |c |c |c}
+\hline
+cell1 &  cell2 & cell3 \\
+cell4 &  cell5 & cell6 \\
+cell7 &  cell8 & cell9 
+\hline
+\end{tabular}
+\end{center}
+公式(行间公式，行内公式)的编辑：https://www.latexlive.com/
+$x$
